@@ -36,3 +36,6 @@ with open('test.csv', newline='') as csvfile:
         print()
     print("total line number of reader is:",spamreader.line_num)
 
+import os
+os.remove("names.csv")
+os.remove("test.csv")

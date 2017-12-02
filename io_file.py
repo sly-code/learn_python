@@ -1,5 +1,4 @@
-poem="""\
-programming is fun
+poem="""programming is fun
 when the work is done
 if you wanna make your work also fun:
     use Python!"""
@@ -18,7 +17,7 @@ while True:
     while a blank line is represented by '\n', 
     a string containing only a single newline.'''
     line=f.readline()
-    if len(line)==0:
+    if not line:
         break
     print(repr(line))   #as poem.txt doesn't end in a newline,
                         #the return of readline() doesn't contain a '\n' on the  last line of the file
@@ -55,3 +54,19 @@ with open("shoplist.pkl","rb") as f:
     f.seek(0)
     print(f.read())
 os.remove("shoplist.pkl")
+
+#print([object][,sep=' '][,end='\n'][,file=sys.stdout])
+import  sys
+print(sys.stdout)
+sys.stdout.write("hello,world\n")
+X=10;Y=('name','age','sex')
+print(X,Y)
+sys.stdout.write(str(X)+' '+str(Y)+'\n')    #equivalent to print(X,Y)
+
+sys.stdout=open("print_out.txt",'a')
+print(sys.stdout)
+print(X,Y)
+sys.stdout.close()
+sys.stdout=sys.__stdout__
+print("back here")
+os.remove("print_out.txt")

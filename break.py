@@ -5,8 +5,10 @@ class ShortInputException(Exception):
         self.length=length
         self.leastlen=leastlen
 
-
+count=0
 while True:
+    count+=1
+    print("this is the {}th cycle".format(count))
     try:
         s=input('enter something: ')
         if len(s)<3:
@@ -24,7 +26,7 @@ while True:
     except ShortInputException as ex:
         print(("ShortInputException: The input was"+
                "{0} long, expected at least {1}").format(ex.length,ex.leastlen))
-    else:
+    else:#attention: else is paired up with try
         print("no exception was raised")
 else:
     print('while is over')

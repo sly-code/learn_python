@@ -20,9 +20,9 @@ print("my {config[spam]} runs {_sys.platform}".format(_sys=sys,config={"spam":"l
 
 somelist=list("spam")
 print("first={0[0]},third={0[2]}".format(somelist))
-#{}:{fieldname!conversionflag:formatspec}
-#conversionflag=r,s,a
-#formatspec: [[fill]align][sign][#][0][width][.precision][typecode]
+# {}:{fieldname!conversionflag:formatspec}
+# conversionflag=r,s,a
+# formatspec: [[fill]align][sign][#][0][width][.precision][typecode]
 print("{0:10}={1:15}".format("spam",123.45678))
 print("{0:>10}={1:<15}".format("spam",123.45678))
 x=31.415926

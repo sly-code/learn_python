@@ -37,3 +37,5 @@ X.add(6)
 print(X)
 X.add(6)
 print(X)
+for x in X:
+    print(x, end=',')
