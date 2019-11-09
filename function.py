@@ -104,6 +104,31 @@ args={"eggs":10,"toast":11,"spam":9,"ham":12}
 func4(**args)
 
 
+def saver(lst=[]):
+    """function with mutable default argument"""
+    lst.append(1)
+    print(lst)
+
+
+print(saver.__doc__)
+saver([2])  # default not used
+saver()     # default used
+saver()     # default grows on each call
+saver()     # in this case, the default acts like a static variable in C language
+
+
+def saver1(lst=None):
+    if lst is None:     # what if x = x or [] ?
+        lst = []
+    lst.append(1)
+    print(lst)
+
+
+saver1([2])
+saver1()
+saver1()
+
+
 def func5(x, *pargs, **kargs):
     """arbitrary number of parameters"""
     print(x,pargs,kargs)
@@ -180,6 +205,9 @@ schedule = [(echo, "spam!", 2), (echo, "ham!", 3)]   # function is also an objec
 for (func, *arg) in schedule:
     print(arg, end=' --> ')
     func(*arg)   # call functions embedded in containers
+echo1 = echo     # echo1 and echo are references of a same function object
+print("echo1 is echo:", echo1 is echo)
+echo1("spider", 3)
 
 """anonymous function:lambda
 grammar formation: lambda arg1, arg2, ..., argn :expression using args

@@ -1,16 +1,16 @@
-ab={"Swaroop":"Swaroop@swaroopch.com",
-    "Larry":"larry@wall.org",
-    "Spammer":"spammer@hotmail.com",
-    'Matsumoto':	'matz@ruby-lang.org'}
+ab = {"Swaroop": "Swaroop@swaroopch.com",
+      "Larry": "larry@wall.org",
+      "Spammer": "spammer@hotmail.com",
+      'Matsumoto':	 'matz@ruby-lang.org'}
 print("there are {} contacts in the address book".format(len(ab)))
 print("Swaroop's address is",ab["Swaroop"])
 for name,address in ab.items():
     print("contact {} at {}".format(name,address))
-ab["Guido"]="guido@qq.com"
-print(sorted(ab))
-print(list(ab.keys()))
-print(list(ab.values()))
-print(list(ab.items()))
+ab["Guido"] = "guido@qq.com"
+print("sorted key list:", sorted(ab))
+print("key list:", list(ab.keys()))
+print("value list:", list(ab.values()))
+print("item list:", list(ab.items()))
 
 # three ways to index by key that might not exist
 # 1: get method
@@ -29,12 +29,12 @@ except KeyError:
 print(ab.pop("Spammer"))
 print(ab)
 
-# other ways to creat dict
-D=dict(Alan=1,Luke=2,Harry=3,Green=4)
+# other ways to create dict
+D=dict(Alan=1, Luke=2, Harry=3, Green=4)
 print(D)
-D=dict(zip(['a','b','c'],[1,2,3]))
+D=dict(zip(['a', 'b', 'c'],[1, 2, 3]))
 print(D)
-D={k:v for (k,v) in zip(['a','b','c'],[10,12,13])}
+D={k:v for (k,v) in zip(['a', 'b', 'c'],[10, 12, 13])}
 print(D)
-D=dict.fromkeys(['w','x','y','z'],0)
+D=dict.fromkeys(['w', 'x', 'y', 'z'],0)
 print(D)

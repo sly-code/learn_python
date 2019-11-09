@@ -18,10 +18,11 @@ import sys
 print("My {1[spam]} runs {0.platform}".format(sys,{"spam":"laptop"}))
 print("my {config[spam]} runs {_sys.platform}".format(_sys=sys,config={"spam":"laptop"}))
 
-somelist=list("spam")
+somelist = list("spam")
 print("first={0[0]},third={0[2]}".format(somelist))
-# {}:{fieldname!conversionflag:formatspec}
-# conversionflag=r,s,a
+# complete grammar formation:{fieldname!conversionflag:formatspec}
+# fieldname: number or keyword, can be followed by .name or [index]
+# conversionflag=r,s,a, represent for repr, str, ascii respectively
 # formatspec: [[fill]align][sign][#][0][width][.precision][typecode]
 print("{0:10}={1:15}".format("spam",123.45678))
 print("{0:>10}={1:<15}".format("spam",123.45678))
